@@ -16,6 +16,7 @@
         'wizard/mail_resend_cancel_views.xml',
         'wizard/mail_resend_message_views.xml',
         'wizard/mail_template_preview_views.xml',
+        'wizard/mail_move_message_views.xml',
         'views/mail_message_subtype_views.xml',
         'views/mail_tracking_views.xml',
         'views/mail_notification_views.xml',

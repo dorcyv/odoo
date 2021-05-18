@@ -303,6 +303,17 @@ function factory(dependencies) {
             });
         }
 
+        move() {
+            this.env.bus.trigger('do-action', {
+                action: 'mail.mail_move_action',
+                options: {
+                    additional_context: {
+                        mail_message_to_move: this.id,
+                    },
+                },
+            });
+        }
+
         /**
          * Refreshes the value of `dateFromNow` field to the "current now".
          */

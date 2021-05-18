@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mail_move_message_view_form" model="ir.ui.view">
+        <field name="name">mail.move.message.view.form</field>
+        <field name="model">mail.move.message</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="mail_message_id"/>
+                        <field name="model"/>
+                        <field name="res_id"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button type="object" name="move" string="Move"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="mail_move_action" model="ir.actions.act_window">
+        <field name="name">Move mail</field>
+        <field name="res_model">mail.move.message</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

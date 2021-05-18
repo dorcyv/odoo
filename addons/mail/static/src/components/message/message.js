@@ -633,6 +633,11 @@ class Message extends Component {
         this.message.markAsRead();
     }
 
+    _onClickMove(ev) {
+        ev.stopPropagation();
+        this.message.move();
+    }
+
     /**
      * @private
      * @param {MouseEvent} ev

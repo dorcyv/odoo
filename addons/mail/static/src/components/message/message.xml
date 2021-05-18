@@ -142,6 +142,7 @@
                                         }" t-on-click="_onClickMarkAsRead" title="Mark as Read"
                                     />
                                 </t>
+                                <span class="o_Message_command o_Message_headerCommand fa fa-arrows-alt" title="Move" t-on-click="_onClickMove"/>
                             </div>
                         </div>
                         <t t-if="message.isModeratedByCurrentPartner">
