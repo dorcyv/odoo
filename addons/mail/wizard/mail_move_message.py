@@ -10,6 +10,7 @@ class MailMoveMessage(models.TransientModel):
     mail_message_id = fields.Many2one('mail.message', 'Message', readonly=True)
     model = fields.Char('Related Document Model', index=True)
     res_id = fields.Many2oneReference('Related Document ID', index=True, model_field='model')
+    subject = fields.Char('Subject')
 
     def default_get(self, fields_list):
         rec = super(MailMoveMessage, self).default_get(fields_list)
@@ -18,7 +19,7 @@ class MailMoveMessage(models.TransientModel):
             'mail_message_id': message.id,
             'model': message.model,
             'res_id': message.res_id,
-            'parent_id': False
+            'subject': message.subject
         })
 
         return rec
@@ -26,5 +27,6 @@ class MailMoveMessage(models.TransientModel):
     def move(self):
         self.mail_message_id.write({
             'model': self.model,
-            'res_id': self.res_id
+            'res_id': self.res_id,
+            'parent_id': False
         })

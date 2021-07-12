@@ -10,6 +10,7 @@
                         <field name="mail_message_id"/>
                         <field name="model"/>
                         <field name="res_id"/>
+                        <field name="subject"/>
                     </group>
                 </sheet>
                 <footer>
